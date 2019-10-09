@@ -29,7 +29,7 @@ pipeline {
 	stage('s3 upload') {
 	   steps {
 		 withAWS(region:'us-east-2',credentials:'s3_jenkinsuser') {
-	s3Upload(file:'target/my-app-1.0-SNAPSHOT.jar', bucket:'jenkinsartifactupload', path:'artifacts/')
+	s3Upload(file:'target/my-app-*.jar', bucket:'jenkinsartifactupload', path:'artifacts/')
  }
 	
 }
